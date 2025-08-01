@@ -3,17 +3,187 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>YouTube – Mock-up</title>
-    <link rel="stylesheet" href="Reto 1.css" />
+    <title>Reto 2</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      body {
+        color: #0f0f0f;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        height: 56px;
+        padding: 0 16px;
+        background: #fff;
+        justify-content: space-between;
+      }
+      .logo img {
+        height: 24px;
+      }
+      .country {
+        font-size: 10px;
+        margin-left: 2px;
+        vertical-align: super;
+      }
+      .search {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      .search-box {
+        flex: 1;
+        display: flex;
+        max-width: 600px;
+      }
+      .search-box input {
+        flex: 1;
+        padding: 8px 12px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 24px 0 0 24px;
+        min-width: 350px;
+      }
+      .search-box button {
+        width: 60px;
+        font-size: 20px;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        border-left: 0;
+        border-radius: 0 24px 24px 0;
+        background: #f8f8f8;
+      }
+      .icon-btn {
+        background: transparent;
+        border: 0;
+        font-size: 22px;
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 50%;
+      }
+      .icon-btn:hover {
+        background: #ededed;
+      }
+      .user {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+      }
+      .avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      .chips-container {
+        position: sticky;
+        top: 56px;
+        z-index: 15;
+        background: #fff;
+        overflow-x: auto;
+        justify-items: center;
+      }
+      .chips-container::-webkit-scrollbar {
+        height: 6px;
+      }
+      .chips-container::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 3px;
+      }
+      .chips {
+        display: flex;
+        gap: 8px;
+        padding: 12px 16px;
+        width: max-content;
+      }
+      .chip {
+        flex: 0 0 auto;
+        padding: 6px 14px;
+        border: 0;
+        background: #e5e5e5;
+        color: #606060;
+        border-radius: 8px;
+        font-size: 14px;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+      .chip.active {
+        background: #0f0f0f;
+        color: #fff;
+      }
+      .chip:hover:not(.active) {
+        background: #d9d9d9;
+      }
+      main {
+        padding: 24px 32px;
+      }
+      .videos-grid {
+        display: grid;
+        gap: 24px 16px;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      }
+      .video-card {
+        cursor: pointer;
+      }
+      .info {
+        display: flex;
+        gap: 12px;
+        margin: 8px 0 4px;
+      }
+      .thumb {
+        position: relative;
+        width: 100%;
+        padding-top: 56.25%;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #ccc;
+      }
+      .thumb img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .duration {
+        position: absolute;
+        right: 8px;
+        bottom: 8px;
+        background: rgba(0, 0, 0, 0.85);
+        color: #fff;
+        font-size: 12px;
+        padding: 2px 4px;
+        border-radius: 3px;
+      }
+      .title {
+        font-size: 16px;
+
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+      }
+      .meta {
+        font-size: 14px;
+        color: #606060;
+      }
+    </style>
     <script src="//code.iconify.design/1/1.0.6/iconify.min.js"></script>
   </head>
   <body>
     <header class="topbar">
       <div class="logo">
-        <img
-          src="thumb/youtube.svg"
-          alt="YouTube"
-        />
+        <img src="thumb/youtube.svg" alt="YouTube" />
         <sup class="country">GT</sup>
       </div>
 
@@ -33,11 +203,7 @@
         <button class="icon-btn">
           <span class="iconify" data-icon="mdi-bell"></span>
         </button>
-        <img
-          class="avatar"
-          src="thumb/1.1.jpg"
-          alt="Usuario"
-        />
+        <img class="avatar" src="https://yt3.ggpht.com/SS1FGBHFbo0M7MrysjItZ_UHiDlj49tBhHj3lPwP4RCirswxAIckWChXxM9zEqLb8r0p3cy4tE4=s68-c-k-c0x00ffffff-no-rj" alt="Usuario" />
       </div>
     </header>
 
@@ -60,11 +226,11 @@
       <section class="videos-grid">
         <article class="video-card">
           <div class="thumb">
-            <img src="thumb/1.jpg" alt="" />
+            <img src="https://i.ytimg.com/vi/Glns8xtF0Lw/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAdksyTGQVrEQpk3_9NI04RjibmOQ" alt="" />
             <span class="duration">8:12</span>
           </div>
           <div class="info">
-            <img class="avatar" src="thumb/1.1.jpg" alt="Usuario" />
+            <img class="avatar" src="https://yt3.ggpht.com/SS1FGBHFbo0M7MrysjItZ_UHiDlj49tBhHj3lPwP4RCirswxAIckWChXxM9zEqLb8r0p3cy4tE4=s68-c-k-c0x00ffffff-no-rj" alt="Usuario" />
             <div class="text">
               <h3 class="title">
                 Anthropic AI podría quebrar pronto por demanda
@@ -75,11 +241,11 @@
         </article>
         <article class="video-card">
           <div class="thumb">
-            <img src="thumb/2.jpg" alt="" />
+            <img src="https://i9.ytimg.com/vi/IAZP3_FkfIk/hq720_custom_2.jpg?sqp=CJTWssQG-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAnPrgq07FrFKUp6Brh_rgg2LH3mw" alt="" />
             <span class="duration">11:46</span>
           </div>
           <div class="info">
-            <img class="avatar" src="thumb/2.2.jpg" alt="Usuario" />
+            <img class="avatar" src="https://yt3.ggpht.com/pZJbhqQPqRwBxB2DRn7njaVM1EN0j29qqUeIKUMs_gNzIRyhaSrraJtxRRteAFqvDbt2FURL=s68-c-k-c0x00ffffff-no-rj" alt="Usuario" />
             <div class="text">
               <h3 class="title">
                 De Assembly a Python: ¿Cómo aprendimos a hablar con las
@@ -91,11 +257,11 @@
         </article>
         <article class="video-card">
           <div class="thumb">
-            <img src="thumb/3.jpg" alt="" />
+            <img src="https://i.ytimg.com/vi/x9AWQ6WVSNY/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCqm1jJvNIiaORFmQhrDJaQ6geC7g" alt="" />
             <span class="duration">2:50:29</span>
           </div>
           <div class="info">
-            <img class="avatar" src="thumb/3.3.jpg" alt="Usuario" />
+            <img class="avatar" src="https://yt3.ggpht.com/ytc/AIdro_muHG-igjt_17tYrX14DJyIXMnHQ9bm-fNERTCV9S2gpXE=s68-c-k-c0x00ffffff-no-rj" alt="Usuario" />
             <div class="text">
               <h3 class="title">
                 Episodio 332 - Emborraché a toda la Cotorrisa Ft. Brincos Dieras
@@ -104,46 +270,47 @@
             </div>
           </div>
         </article>
-         <article class="video-card">
+        <article class="video-card">
           <div class="thumb">
-            <img src="thumb/4.jpg" alt="" />
+            <img src="https://i.ytimg.com/vi/9zB-Ou1_F48/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBY29Tx1jjRiDMMwPlcTecEDNJoEw" alt="" />
             <span class="duration">32:56</span>
           </div>
           <div class="info">
-            <img class="avatar" src="thumb/4.4.jpg" alt="Usuario" />
+            <img class="avatar" src="https://yt3.ggpht.com/ytc/AIdro_lBONq9MhlwYipSFzOYNd_hGxXVedhZQOB_arhuOch2wkQ=s68-c-k-c0x00ffffff-no-rj" alt="Usuario" />
             <div class="text">
-              <h3 class="title">
-                ¿Los Videojuegos NECESITAN otro CRASH?
-              </h3>
-              <p class="meta">Cultura VJ • 189 K visualizaciones • hace 10 días</p>
+              <h3 class="title">¿Los Videojuegos NECESITAN otro CRASH?</h3>
+              <p class="meta">
+                Cultura VJ • 189 K visualizaciones • hace 10 días
+              </p>
             </div>
           </div>
         </article>
         <article class="video-card">
           <div class="thumb">
-            <img src="thumb/5.jpg" alt="" />
+            <img src="https://i.ytimg.com/vi/TlVpF11qZxo/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBuusQ2RoSg2a6uDHWqcIXchz_i1A" alt="" />
             <span class="duration">1:13:10</span>
           </div>
           <div class="info">
-            <img class="avatar" src="thumb/5.5.jpg" alt="Usuario" />
+            <img class="avatar" src="https://yt3.ggpht.com/WOacr4qgSj2xKu5hxG0kwkqESCvqCaNIwPNgvMTV60-JfMSNO2gcmQxdbMC_tZqea_4680yM=s88-c-k-c0x00ffffff-no-rj" alt="Usuario" />
             <div class="text">
-              <h3 class="title">
-              El Bananero | Tirando Bola | T8E19
-              </h3>
-              <p class="meta">Franco Escamilla • 1,3 M visualizaciones • hace 12 días</p>
+              <h3 class="title">El Bananero | Tirando Bola | T8E19</h3>
+              <p class="meta">
+                Franco Escamilla • 1,3 M visualizaciones • hace 12 días
+              </p>
             </div>
           </div>
         </article>
         <article class="video-card">
           <div class="thumb">
-            <img src="thumb/6.jpg" alt="" />
+            <img src="https://i.ytimg.com/vi/gGbwJsuUU6Q/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBme5h_PP-QgQkteN2p6_psVFsDew" alt="" />
             <span class="duration">15:47</span>
           </div>
           <div class="info">
-            <img class="avatar" src="thumb/6.6.jpg" alt="Usuario" />
+            <img class="avatar" src="https://yt3.ggpht.com/GL7-YpIC7JmduzXTs6epKqY5jRoI29nxM1T6ecLnLcFCd76QHhB3buGFdT3ftc9sb8o2xUvYRkg=s68-c-k-c0x00ffffff-no-rj" alt="Usuario" />
             <div class="text">
               <h3 class="title">
-                VOLVIÓ HBO MAX 🖤😱 Recorrido completo, CAMBIOS, nuevas películas, ¿Nuevo Precio?
+                VOLVIÓ HBO MAX 🖤😱 Recorrido completo, CAMBIOS, nuevas
+                películas, ¿Nuevo Precio?
               </h3>
               <p class="meta">ANDRU • 39 K visualizaciones • hace 13 días</p>
             </div>
