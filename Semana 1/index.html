@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Document</title>
+    <style>
+      table{
+        width: 100%;
+      }
+      table, th, td{
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Precio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Producto 1
+          </td>
+          <td>
+            250
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <ul>
+      <li>Elemento 1</li>
+      <li>Elemento 2</li>
+      <li>Elemento 3</li>
+      <li>Elemento 4</li>
+    </ul>
+    <ol>
+      <li value="50">Elemento 1</li>
+      <li>Elemento 2</li>
+      <li>Elemento 3</li>
+      <li>Elemento 4</li>
+      <li>
+        <ol>
+          <li style="list-style-type: lower-alpha;">Sub-Elemento 1</li>
+          <li style="list-style-type: lower-alpha;">Sub-Elemento 2</li>
+          <li style="list-style-type: lower-alpha;">Sub-Elemento 3</li>
+          <li style="list-style-type: lower-alpha;">Sub-Elemento 4</li>
+        </ol>
+      </li>
+    </ol>
+    <form action="/info" method="get">
+      <label for="name">Nombre</label>
+      <input id="name" type="text" placeholder="Ingrese nombre" />
+      <br />
+      <label for="lastName">Apellido</label>
+      <input id="lastName" type="text" placeholder="Ingrese apellido" />
+      <br />
+      <label for="comment">Comentario</label>
+      <textarea
+        id="comment"
+        cols="50"
+        placeholder="Ingrese comentario"
+        rows="10"
+      ></textarea>
+      <br />
+      <button type="reset">Reiniciar</button>
+      <button type="submit">Enviar</button>
+    </form>
+    <h1>Mi primer heading</h1>
+    <h2>Mi segundo heading</h2>
+    <h3>Mi tercero heading</h3>
+    <h4>Mi cuarto heading</h4>
+    <h5>Mi quinto heading</h5>
+    <h6>Mi sexto heading</h6>
+    <p>Hola a todos esto es un mensaje</p>
+    <p>Esta es una segunda linea de parrafo</p>
+    <hr />
+    <h2>Segunto heading abajo</h2>
+    <p>
+      Un poco mas <br />
+      de <span style="color: blue">texto</span>
+    </p>
+    <!--Este texto es un comentario-->
+    <a href="https://www.google.com" target="_blank">ir a google</a>
+    <img src="img/bosque.jpg" height="150px" width="150px" alt="" />
+  </body>
+</html>

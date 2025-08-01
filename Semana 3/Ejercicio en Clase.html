@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      *{
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .card{
+        max-width: 250px;
+        background-color: rgb(0, 0, 0,0.05);
+        border-radius: 12px;
+        padding:16px
+      }
+      .header{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+      .date{
+        display: flex;
+        gap: 4px;
+      }
+      .number{
+        font-size: 2.5em;
+        line-height: 1em;
+        font-weight: bolder
+      }
+      .month-year{
+        margin-top: 2px;
+        display: flex;
+        flex-direction: column;
+      }
+      .month{
+        font-weight: bold;
+      }
+      .day{
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      .tools{
+        display: flex;
+        gap:6px;
+        padding: 10px 0;
+
+      }
+      .input-name{
+        width: 60%;
+        height: 20px;
+        border: 0px;
+        border-radius: 6px;
+      }
+      .btn-add{
+        width: 10%;
+        border-radius: 12px;
+        border:0px;
+        background-color:rgb(0, 0, 0,0.1);
+      }
+      .btn-order{
+        width: 30%;
+        background-color: rgb(255, 165, 0);
+        border: 0px;
+        border-radius: 6px;
+      }
+      .list{
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .item{
+        height: 30px;
+        padding: 10px;
+        border-radius: 8px;
+      }
+      .green{
+        background-color: rgb(0, 128, 0,1);
+        color: white;
+      }
+      .grey{
+        background-color: rgb(0, 0, 0,0.05);
+        text-decoration:line-through;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="header">
+        <div class="date">
+          <div class="number">11</div>
+          <div class="month-year">
+            <span class="month"> Sept </span>
+            <span class="year"> 2021 </span>
+          </div>
+        </div>
+        <div class="day">Sábado</div>
+      </div>
+      <div class="tools">
+        <input type="text" class="input-name" />
+        <button class="btn-add">+</button>
+        <button class="btn-order">Ordenar</button>
+      </div>
+      <div class="list">
+        <div class="item green">
+          Salir a Caminar
+        </div>
+        <div class="item green">
+          Comprar Jabon
+        </div>
+        <div class="item grey">
+          Hacer Ejercicio
+        </div>
+        <div class="item grey">
+          Pasear al Perro
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
